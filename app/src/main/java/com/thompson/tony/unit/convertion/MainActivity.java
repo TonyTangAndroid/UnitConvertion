@@ -73,6 +73,12 @@ public class MainActivity extends AppCompatActivity {
                 if (isPoundFocusable) {
                     String textInput = s.toString();
                     if (!TextUtils.isEmpty(textInput)) {
+                        if (textInput.equals(".")) {
+                            return;
+                        }
+                        if (textInput.startsWith(".")) {
+                            textInput = "0" + textInput;
+                        }
                         ounceEditText.setText(String.format("%.2f", Double.valueOf(textInput) * 16));
                     } else {
                         ounceEditText.setText("");
@@ -98,6 +104,12 @@ public class MainActivity extends AppCompatActivity {
                 if (!isPoundFocusable) {
                     String textInput = s.toString();
                     if (!TextUtils.isEmpty(textInput)) {
+                        if (textInput.equals(".")) {
+                            return;
+                        }
+                        if (textInput.startsWith(".")) {
+                            textInput = "0" + textInput;
+                        }
                         poundEditText.setText(String.format("%.2f", Double.valueOf(textInput) / 16));
                     } else {
                         poundEditText.setText("");
