@@ -38,9 +38,11 @@ public class MainActivity extends AppCompatActivity {
                 if (isPoundFocusable) {
                     poundEditText.addTextChangedListener(poundWatcher);
                     ounceEditText.removeTextChangedListener(ounceWatcher);
+                    poundEditText.setText("");
                 } else {
                     poundEditText.removeTextChangedListener(poundWatcher);
                     ounceEditText.addTextChangedListener(ounceWatcher);
+                    ounceEditText.setText("");
                 }
             }
         });
@@ -79,7 +81,8 @@ public class MainActivity extends AppCompatActivity {
                         if (textInput.startsWith(".")) {
                             textInput = "0" + textInput;
                         }
-                        ounceEditText.setText(String.format("%.2f", Double.valueOf(textInput) * 16));
+                        Double ounceValue = Double.valueOf(textInput) * 16;
+                        ounceEditText.setText(String.format("%.2f   %.2f", ounceValue, ounceValue / 2));
                     } else {
                         ounceEditText.setText("");
                     }
