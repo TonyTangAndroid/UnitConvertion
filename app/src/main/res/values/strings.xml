@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">UnitConvertion</string>
+
+    <!-- Strings related to login -->
+    <string name="ounce">Ounce</string>
+    <string name="pound">Pound</string>
+</resources>
